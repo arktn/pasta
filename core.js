@@ -16,7 +16,7 @@ module.exports.editUser = async function (args1, args2) {
     console.log('User\'s data has been edited!');
 }
 
-module.exports.getUser = async function (args1, args2) {
+module.exports.getUser = async function (args1) {
     let get_user = await User.findOne({id: args1});
     console.log('User found!');
     return get_user.data;
