@@ -1,5 +1,5 @@
-let mongoose = require('mongoose');
-let schemas = require('./schemas')
+const mongoose = require('mongoose');
+const schemas = require('./schemas')
 let User = schemas.user;
 let Guild = schemas.guild;
 
