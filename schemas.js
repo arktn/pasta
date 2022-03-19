@@ -1,11 +1,11 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
 
-let userSchema = new mongoose.Schema({
+const userSchema = new mongoose.Schema({
     id: String,
     data: String
 });
 
-let guildSchema = new mongoose.Schema({
+const guildSchema = new mongoose.Schema({
     id: String,
     data: String
 });
