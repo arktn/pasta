@@ -1,5 +1,5 @@
-const mongoose = require('mongoose');
-const schemas = require('./schemas')
+let mongoose = require('mongoose');
+let schemas = require('./schemas')
 let User = schemas.user;
 let Guild = schemas.guild;
 
@@ -28,6 +28,18 @@ module.exports.getUser = async function (args1) {
     if (get_user) {
         console.log('User found!');
         return get_user.data;
+    }
+}
+
+module.exports.checkUser = async function (args1) {
+    let check = await User.exists({id: args1});
+    if (check === null) {
+        console.log('User doesn\'t exist!');
+        return false;
+    }
+    if (check !== null) {
+        console.log('User does exist!');
+        return true;
     }
 }
 
@@ -61,6 +73,18 @@ module.exports.getGuild = async function (args1) {
     if (get_guild) {
         console.log('Guild found!');
         return get_guild.data;
+    }
+}
+
+module.exports.checkGuild = async function (args1) {
+    let check = await Guild.exists({id: args1});
+    if (check === null) {
+        console.log('Guild doesn\'t exist!');
+        return false;
+    }
+    if (check !== null) {
+        console.log('Guild does exist!');
+        return true;
     }
 }
 
